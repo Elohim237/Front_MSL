@@ -14,7 +14,9 @@ export class SliderComponent {
       title: 'Gérez simplement, innovez différemment avec',
       highlight: 'Odoo',
       description: 'Réinventez votre activité grâce à des solutions logicielles conçues pour répondre à votre marché.',
-      buttons: []
+      buttons: [
+        
+      ]
     },
     {
       id: 'slide2',
@@ -29,7 +31,7 @@ export class SliderComponent {
     },
     {
       id: 'slide3',
-      img: '../../assets/img/accueil/hom3.png',
+      img: '../../assets/img/accueil/man3.jpg',
       title: 'Support 6J/7 24/24 - Français/Anglais',
       highlight: 'anticiper demain',
       description: 'Représenté dans 3 pays, même service, même standard',
@@ -47,7 +49,7 @@ export class SliderComponent {
 
   ngOnInit() {
     this.showSlide(this.currentSlide);
-    this.intervalId = setInterval(() => this.nextSlide(), 5000);
+    this.intervalId = setInterval(() => this.nextSlide(), 6000);
   }
 
   ngOnDestroy() {

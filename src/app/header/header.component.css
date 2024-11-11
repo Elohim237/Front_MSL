@@ -106,7 +106,7 @@ nav {
   z-index: 1000;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown.open .dropdown-menu {
   display: block;
 }
 
@@ -142,7 +142,9 @@ nav {
   text-decoration: none;
   font-weight: bold;
 }
-
+.close-btn {
+ display:none;
+}
 /* Responsive Styles */
 
 /* Mobile */
@@ -199,7 +201,21 @@ nav {
     background: #f9f9f9;
   }
 
-  .dropdown:hover .dropdown-menu {
+  /* For mobile, display dropdown on click */
+  .dropdown.open .dropdown-menu {
     display: flex;
+  }
+
+  /* Bouton de fermeture pour le menu mobile */
+  .close-btn {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
   }
 }

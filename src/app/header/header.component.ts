@@ -7,8 +7,8 @@ import { Component, HostListener } from '@angular/core';
 })
 export class HeaderComponent {
   isMenuOpen = false;
-  isDropdownOpen = false;
   isMobile = window.innerWidth <= 768;
+  isDropdownOpen = false;
 
   ngOnInit() {
     // Initialisation pour détecter si l'écran est mobile
@@ -23,13 +23,11 @@ export class HeaderComponent {
     }
   }
 
-  toggleDropdown() {
-    // Permet d’ouvrir/fermer le sous-menu uniquement sur mobile
-    if (this.isMobile) {
-      this.isDropdownOpen = !this.isDropdownOpen;
-    }
-  }
+  
 
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
   @HostListener('window:resize')
   onResize() {
     this.isMobile = window.innerWidth <= 768;
@@ -39,4 +37,5 @@ export class HeaderComponent {
       this.isDropdownOpen = false;
     }
   }
+  
 }
