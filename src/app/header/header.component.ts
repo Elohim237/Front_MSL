@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +7,36 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isMenuOpen = false;
-isMobile = window.innerWidth <= 768;
+  isDropdownOpen = false;
+  isMobile = window.innerWidth <= 768;
 
-toggleMenu() {
-  this.isMenuOpen = !this.isMenuOpen;
-}
+  ngOnInit() {
+    // Initialisation pour détecter si l'écran est mobile
+    this.onResize();
+  }
 
-onResize() {
-  this.isMobile = window.innerWidth <= 768;
-}
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    // Ferme le sous-menu si le menu principal est fermé
+    if (!this.isMenuOpen) {
+      this.isDropdownOpen = false;
+    }
+  }
+
+  toggleDropdown() {
+    // Permet d’ouvrir/fermer le sous-menu uniquement sur mobile
+    if (this.isMobile) {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    }
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isMobile = window.innerWidth <= 768;
+
+    // Ferme le sous-menu automatiquement si l'écran est élargi
+    if (!this.isMobile) {
+      this.isDropdownOpen = false;
+    }
+  }
 }
