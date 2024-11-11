@@ -1,0 +1,68 @@
+
+.certification-section {
+    background-color: #054553;
+    color: white;
+    padding: 60px 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.certification-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.certification-content h3 {
+    color: #ffc107;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ffc107;
+    width: 170px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.certification-content .underline {
+    width: 80px; /* Ajustez la largeur selon la longueur du mot "Certification" */
+    height: 4px;
+    background-color: #ffc107;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.certification-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.certification-content h2 span {
+    color: #ffc107;
+}
+
+.certification-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: left;
+    color: #fff;
+}
+
+.certification-badge {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.certification-badge img {
+    max-width: 300px;
+    height: auto;
+}

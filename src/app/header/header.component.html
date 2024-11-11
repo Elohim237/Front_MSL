@@ -1,0 +1,62 @@
+<header>
+  <div class="top-bar">
+    <div class="container">
+      <div class="language-selector">
+        <button>Français (changer)</button>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="container">
+      <div class="logo">
+        <a routerLink="/">
+          <img src="../../../assets/img/accueil/logoMSL.png" />
+        </a>
+      </div>
+
+      <!-- Menu Burger -->
+      <div class="burger" (click)="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <!-- Menu de Navigation -->
+      <ul [ngClass]="{ 'active': isMenuOpen }" class="nav-links">
+        <li>
+          <a routerLink="/accueil" routerLinkActive="actived" [routerLinkActiveOptions]="{exact: true}">Accueil</a>
+        </li>
+        <li class="dropdown">
+          <a routerLink="/serviceOdoo" routerLinkActive="actived">
+            Vos besoins <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/serviceOdoo" routerLinkActive="actived">Application Odoo</a></li>
+            <li><a routerLink="/service2" routerLinkActive="actived">Finances</a></li>
+            <li><a routerLink="/service3" routerLinkActive="actived">Ventes</a></li>
+            <li><a routerLink="#" routerLinkActive="actived">Fabrications</a></li>
+            <li><a routerLink="#" routerLinkActive="actived">Site Internet</a></li>
+            <li><a routerLink="#" routerLinkActive="actived">Services</a></li>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/package-metier" routerLinkActive="actived">Package Métier</a>
+        </li>
+        <li>
+          <a routerLink="/about" routerLinkActive="actived">À propos</a>
+        </li>
+        <!-- Actions pour le menu mobile -->
+        <li class="mobile-actions" *ngIf="isMobile && isMenuOpen">
+          <a routerLink="/login" routerLinkActive="actived" class="connexion">Connexion</a>
+          <a routerLink="#" class="btn" style="color:#FAC83B;">Passer un rendez-vous</a>
+        </li>
+      </ul>
+
+      <!-- Actions pour le menu de bureau -->
+      <div class="actions">
+        <a routerLink="/login" routerLinkActive="actived" class="connexion">Connexion</a>
+        <a routerLink="/contact" class="btn">Contactex-nous</a>
+      </div>
+    </div>
+  </nav>
+</header>

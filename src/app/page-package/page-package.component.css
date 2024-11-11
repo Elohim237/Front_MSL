@@ -1,0 +1,66 @@
+
+.advantages {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.advantage-item {
+    display: flex;
+    align-items: baseline;
+
+    font-size: 1rem;
+    color: #333;
+}
+
+.check-icon {
+    color: #ffff;
+    margin-right: 10px;
+}
+.sub-text h1{
+    margin-top: -60px
+}
+.svg-container {
+    position: relative;
+    display: inline-block;
+}
+
+.hero {
+    background:#F6FFFE;
+    padding: 60px 0;
+    text-align: center;
+}
+
+
+.hero h1 {
+
+text-align: center;
+font-size: 64px;
+font-style: normal;
+font-weight: 900;
+line-height: 90px; /* 140.625% */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+.main {
+    margin-top: 100px;
+}
+
+.text-content2 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 55px;
+}
+
+.highlight-svg {
+    position: absolute;
+    right: 0;
+    bottom: 50px; /* Ajustez cette valeur selon l'espacement souhaité */
+    z-index: 0;
+    transform: translateX(10%); /* Centrage du SVG par rapport à la fin du texte */
+}

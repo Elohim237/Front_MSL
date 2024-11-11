@@ -1,0 +1,34 @@
+<section>
+    <div class="blog-articles">
+      <div class="section-header">
+        <div class="section-header--text">
+          <h2>Blog & Article</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="see-more">
+          <a href="#" class="btn-see-more">See More Articles</a>
+        </div>
+      </div>
+  
+      <div class="articles">
+        <div 
+          class="article-card" 
+          *ngFor="let article of articles">
+          <img [src]="article.img" alt="Article Image">
+          <div class="article-info">
+            <span class="article-date">
+              <i class="fa fa-calendar" aria-hidden="true"></i> {{ article.date }}
+            </span>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.description }}</p>
+            <a [href]="article.link" class="learn-more">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

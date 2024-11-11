@@ -1,0 +1,136 @@
+ <!-- Section Hero -->
+ <section class="hero-section2">
+    <div class="hero-image2">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>A propos de nous</h1>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, labore!</span>
+        </div>
+    </div>
+</section>
+
+<!-- Section About Us -->
+<section class="about-us">
+    <div class="container2">
+        <div class="container2--text">
+            <h1>Qui sommes-nous ?</h1>
+            <p>MSL Itech, disposant des bureaux en Belgique et au Maroc, est un Partenaire Certifié Odoo. Nous proposons des solutions ERP robustes et personnalisées pour les PME, en appliquant des standards internationaux reconnus pour leur fiabilité. Notre mission est d’accompagner les entreprises dans leur transformation digitale en restant agiles face à un environnement économique en constante évolution. </p>
+        </div>
+
+        <div class="content">
+            <div class="team">
+                <img src="../../assets/img/accueil/about1.png" alt="Notre équipe" class="team-image">
+                <div class="team-card">
+                    <h2>Notre équipe</h2>
+                    <p>Notre équipe est notre force. Composée d'experts certifiés Odoo, elle partage une même vision : offrir des solutions simples, puissantes et connectées pour transformer la gestion d’entreprise. Chaque membre de l’équipe est dédié à autonomiser nos clients, en les aidant à simplifier leurs processus et à grandir. Ensemble, nous sommes engagés à créer un impact, à chaque étape de votre transformation digitale.</p>
+                </div>
+            </div>
+
+            <div class="ceo-message">
+                <h2>Mot du CEO</h2>
+                <p>Chez MSL Itech, nous croyons que les PME ont le pouvoir de transformer le monde. Avec Odoo, nous offrons des solutions qui non seulement simplifient vos processus, mais qui vous permettent aussi de connecter vos équipes et vos opérations de manière fluide et efficace. Nous ne fournissons pas qu’un logiciel, nous créons une plateforme qui autonomise les entreprises pour qu’elles puissent grandir et atteindre leur plein potentiel.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="carousel-section">
+    <div>
+      <h1 style="color: #FAC83B; margin-bottom: 24px;">Nos solutions Odoo</h1>
+      <p class="description">
+        Odoo propose un ensemble de solutions ERP intégrées et modulables,<br> conçues pour simplifier et optimiser tous les aspects de la gestion d'entreprise.
+      </p>
+      <div class="carousel-container">
+        <button class="carousel-button prev" (click)="moveCarousel(-1)">
+          &#8249;
+        </button>
+        <div class="carousel-track-container">
+          <div class="carousel-track" [style.transform]="translateX">
+            <div class="carousel-slide" #carouselSlide *ngFor="let slide of slides">
+              <div class="card">
+                <img [src]="slide.img" [alt]="slide.alt" class="card-image" />
+                <div class="card-overlay">
+                  <p>{{ slide.text }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-button next" (click)="moveCarousel(1)">
+          &#8250;
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+<section class="team-section">
+    <div>
+        <h2 class="team-title">Team <span class="highlight">Expert</span></h2>
+        <div class="team-grid">
+            <div class="card-team">
+                <img src="../../assets/img/accueil/businessman.png" alt="Christian" class="team-image2">
+                <h3>Christian</h3>
+                <p>Translator</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-xing"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="card-team">
+                <img src="../../assets/img/accueil/correspondence-education-and-e-learning-african-a-2021-08-29-03-30-53-utc-1.jpg.png" alt="Camila" class="team-image2">
+                <h3>Camila</h3>
+                <p>Translator</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-xing"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="card-team">
+                <img src="../../assets/img/accueil/correspondence-education-and-e-learning-african-a-2021-08-29-03-30-53-utc-1.jpg.png" alt="Camila" class="team-image2">
+                <h3>Camila</h3>
+                <p>Translator</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-xing"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="card-team">
+                <img src="../../assets/img/accueil/businessman.png" alt="Camila" class="team-image2">
+                <h3>Camila</h3>
+                <p>Translator</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-xing"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="card-team">
+                <img src="../../assets/img/accueil/teach-students-online-from-home-at-covid-19-epidem-2021-08-29-08-34-24-utc.jpg.png" alt="Camila" class="team-image2">
+                <h3>Camila</h3>
+                <p>Translator</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-xing"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="card-team">
+                <img src="../../assets/img/accueil/correspondence-education-and-e-learning-african-a-2021-08-29-03-30-53-utc-1.jpg.png" alt="Camila" class="team-image2">
+                <h3>Camila</h3>
+                <p>Translator</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-xing"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <!-- Répétez les cartes pour d'autres membres de l'équipe -->
+        </div>
+    </div>
+</section>
