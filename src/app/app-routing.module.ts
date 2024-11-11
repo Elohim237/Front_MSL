@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'service3', component: Service3Component },
   { path: 'reserve-demo', component: ReserveDemoComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'jobb', component: JobComponent },
+  { path: 'job-MSL', component: JobComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' }
 ];
