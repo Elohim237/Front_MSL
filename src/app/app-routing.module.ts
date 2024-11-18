@@ -10,6 +10,7 @@ import { Service3Component } from './service3/service3.component';
 import { ReserveDemoComponent } from './reserve-demo/reserve-demo.component';
 import { TextSlideComponent } from './text-slide/text-slide.component';
 import { ContactComponent } from './contact/contact.component';
+import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'job-MSL', component: JobComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'besoin', component: SoumettreBesoinComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' }
 ];
 @NgModule({

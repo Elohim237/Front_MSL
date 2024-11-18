@@ -49,7 +49,7 @@ line-height: 60px;
 
 .btn-yellow {
     background-color: #ffc107;
-    color: #022b3a;
+    color: #114D5A;
     padding: 10px 20px;
     border: none;
     border-radius: 25px;
@@ -140,7 +140,7 @@ line-height: 60px;
 
 .app-card p {
     font-size: 1rem;
-    color: #054553;
+    color: #114D5A;
     margin: 0;
 }
 
@@ -150,7 +150,7 @@ line-height: 60px;
 
 .view-plus span {
     font-size: 1rem;
-    color: #054553;
+    color: #114D5A;
     cursor: pointer;
     transition: color 0.3s ease;
 }

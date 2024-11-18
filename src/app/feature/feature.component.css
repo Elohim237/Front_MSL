@@ -1,6 +1,6 @@
 .trust-section {
     padding: 60px 0;
-    background-color: #054553;
+    background-color: #114D5A;
     height: 55vh;
     color: #fff;
     display: flex;
@@ -79,7 +79,7 @@
 
 .cta-button {
     background-color: #ffc107;
-    color: #054553;
+    color: #114D5A;
     padding: 15px 30px;
     border: none;
     border-radius: 5px;

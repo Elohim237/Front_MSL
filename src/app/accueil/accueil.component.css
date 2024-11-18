@@ -1,4 +1,4 @@
-/* Texte et Vidéo Section */
+
 .text-video-section {
     position: relative;
     padding: 60px 0;
@@ -8,24 +8,28 @@
 .text-video-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     position: relative;
     padding: 50px;
     gap: 50px;
+    flex-wrap: wrap; /* Permet de passer en colonne sur petits écrans */
 }
 
 .text-section {
     flex: 1;
     padding-right: 20px;
+    min-width: 300px; /* Garde une taille minimale sur petits écrans */
 }
 
 .text-section h1 {
-    font-size: 48px;
+    font-size: clamp(24px, 4vw, 48px); /* Responsive: Taille s'ajuste en fonction de la largeur */
     color: #333;
+    margin-bottom: 20px;
+    text-align: left; /* Centre le texte sur mobiles */
 }
 
 .text-section .highlight {
-    color: #005f5f;
+    color: #114D5A;
     font-weight: bold;
 }
 
@@ -37,8 +41,8 @@
 .text-section li {
     display: flex;
     align-items: center;
-    margin-bottom: 24px;
-    font-size: 22px;
+    margin-bottom: 16px; /* Réduit l'espacement pour les écrans petits */
+    font-size: clamp(16px, 2vw, 22px); /* Taille responsive */
     color: #555;
 }
 
@@ -67,11 +71,13 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    min-width: 300px; /* Garde une taille minimale sur petits écrans */
 }
 
 video {
-    width:655px;
-    height: 454px;
+    width: 100%;
+    max-width: 655px; /* Limite la largeur sur grands écrans */
+    height: auto; /* Conserve le ratio d'aspect */
     border-radius: 24px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -80,33 +86,28 @@ video {
     position: absolute;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
 .decoration-image-1 {
     top: 16px;
     right: -15px;
-    width: 100px;
+    width: clamp(50px, 10vw, 100px); /* Responsive */
     height: auto;
 }
 
 .decoration-image-2 {
     bottom: -50px;
     left: -65px;
-    width: 150px;
+    width: clamp(80px, 15vw, 150px); /* Responsive */
     height: auto;
 }
 
-.decorations {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
 
 .decoration {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: clamp(30px, 5vw, 50px); /* Responsive */
+    height: clamp(30px, 5vw, 50px); /* Responsive */
     border-radius: 10px;
     opacity: 0.7;
 }
@@ -116,7 +117,7 @@ video {
 }
 
 .decoration.green {
-    background-color:#022b3a;
+    background-color: #114D5A;
 }
 
 .decoration.middle-left {
@@ -127,14 +128,93 @@ video {
 
 .decoration.top-right {
     top: 10px;
-    right: 10px;
+    right: 150px;
 }
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 655px;
+    padding-top: 56.25%; /* Ratio 16:9 */
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+/* Responsive Design */
+
+/* Tablette */
+@media (max-width: 1024px) {
+    .text-video-container {
+        gap: 30px; /* Réduit l'espacement */
+        flex-wrap: wrap; /* Passer en colonne si nécessaire */
+    }
+
+    .text-section {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .video-section {
+        justify-content: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .text-video-container {
+        flex-direction: column; /* Empile les éléments en colonne */
+        padding: 20px;
+    }
+
+    .text-section {
+        padding: 0;
+        text-align: center; /* Centre tout le texte */
+    }
+
+    .text-section h1 {
+        font-size: 28px; /* Taille adaptée au mobile */
+    }
+
+    .text-section li {
+        font-size: 18px;
+        margin-bottom: 10px; /* Réduit l'espacement */
+    }
+
+    .video-section {
+        width: 100%; /* Vidéo prend toute la largeur */
+    }
+
+    video {
+        width: 100%; /* S'adapte à la largeur disponible */
+        border-radius: 12px;
+    }
+
+    .decoration-image-1,
+    .decoration-image-2 {
+        display: none; /* Masque les décorations pour éviter l'encombrement */
+    }
+
+    .decorations .decoration {
+        display: none; /* Masque les éléments de décoration */
+    }
+}
+
 
 /* Section Accordéon et Image */
 /* Section Accordéon et Image */
 .accordion-image-section {
     padding: 60px 0;
-    background-color: #022b3a;
+    background-color: #114D5A;
     color: white;
   }
   
@@ -299,7 +379,7 @@ video {
 
 .experts-section h2 {
     font-size: 18px;
-    color: #005f5f;
+    color: #114D5A;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -351,7 +431,7 @@ video {
 .expert-info h3 {
     margin: 0;
     font-size: 20px;
-    color: #022b3a;
+    color: #114D5A;
 }
 
 /* Styles de base (Desktop) */
@@ -402,7 +482,7 @@ video {
     height: 20rem;
     text-align: left;
     padding: 3rem;
-    background-color: #054553;
+    background-color: #114D5A;
     border-radius: 16px;
     opacity: 0;
     left:15rem;
@@ -480,12 +560,12 @@ video {
 }
 
 .indicator:hover {
-    background-color: #005f5f;
+    background-color: #114D5A;
 }
 
 /* Animation du bouton "See More Articles" */
 .btn-see-more {
-    background-color: #054553;
+    background-color: #114D5A;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -496,7 +576,7 @@ video {
 }
 
 .btn-see-more:hover {
-    background-color: #043a4c;
+    background-color: #114D5A;
 }
 
 /* Responsive Styles */

@@ -25,6 +25,7 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { faCertificate, faCogs, faGlobe, faHeadset, faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
 import { AvantagesComponent } from './avantages/avantages.component';
 import { ContactComponent } from './contact/contact.component';
+import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ContactComponent } from './contact/contact.component';
     ReserveDemoComponent,
     TextSlideComponent,
     AvantagesComponent,
-    ContactComponent
+    ContactComponent,
+    SoumettreBesoinComponent
   ],
   imports: [
     BrowserModule,

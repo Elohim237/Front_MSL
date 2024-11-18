@@ -203,12 +203,12 @@ letter-spacing: 0.216px;
 
 .bg-green{
     position: absolute;
-    background: linear-gradient(0deg, #054553 0%, #054553 100%), #F4FDFF;
+    background: linear-gradient(0deg, #114D5A 0%, #114D5A 100%), #F4FDFF;
     height: 600px;
     width: 100%;
 }
 .starter{
-    background: linear-gradient(0deg, #054553 0%, #054553 100%), #F4FDFF;
+    background: linear-gradient(0deg, #114D5A 0%, #114D5A 100%), #F4FDFF;
     margin: 0;
     padding-left: 100px;
    width: 100%;

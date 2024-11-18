@@ -1,9 +1,8 @@
 /* Conteneur principal */
 .reasons-container {
     padding: 60px 20px;
-    background-color: #043a4c;
+    background-color: #114D5A;
     text-align: center;
-    font-family: 'Arial, sans-serif';
 }
 
 /* Titre principal */
@@ -58,7 +57,7 @@
 /* Icône */
 .reason-item fa-icon {
     font-size: 3.5em;
-    color: #043a4c;
+    color: #114D5A;
     margin-bottom: 20px;
     transition: color 0.3s ease;
 }

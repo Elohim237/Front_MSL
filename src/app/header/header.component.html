@@ -1,49 +1,42 @@
 <header>
+  <!-- Top Bar -->
   <div class="top-bar">
     <div class="container">
       <div class="language-selector">
-        <button>Français (changer)</button>
+        <button aria-label="Changer la langue">Français</button>
       </div>
     </div>
   </div>
 
+  <!-- Navigation -->
   <nav>
     <div class="container">
+      <!-- Logo -->
       <div class="logo">
         <a routerLink="/">
-          <img src="../../../assets/img/accueil/logoMSL.png" />
+          <img src="../../../assets/img/accueil/logoMSL.png" alt="Logo MSL" />
         </a>
       </div>
 
-      <!-- Menu Burger pour Mobile -->
-      <div class="burger" (click)="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <!-- Burger Menu -->
+      <button class="burger" (click)="toggleMenu()" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-      <!-- Navigation Links et Actions combinés pour Mobile avec le bouton Close -->
-      <div [ngClass]="{ 'active': isMenuOpen }" class="nav-wrapper">
-        <!-- Bouton de fermeture pour le menu mobile -->
-        <button class="close-btn" (click)="toggleMenu()">X</button>
+      <!-- Navigation Wrapper -->
+      <div [ngClass]="{'active': isMenuOpen}" class="nav-wrapper">
+        <!-- Close Button -->
+        <button class="close-btn" (click)="toggleMenu()" aria-label="Fermer le menu">&times;</button>
         
+        <!-- Navigation Links -->
         <ul class="nav-links">
-          <li><a routerLink="/accueil" routerLinkActive="actived" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
-          <!-- <li class="dropdown">
-            <a routerLink="/serviceOdoo" routerLinkActive="actived">
-              Vos besoins <i class="fas fa-chevron-down"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a routerLink="/serviceOdoo" routerLinkActive="actived">Application Odoo</a></li>
-              <li><a routerLink="/service2" routerLinkActive="actived">Finances</a></li>
-              <li><a routerLink="/service3" routerLinkActive="actived">Ventes</a></li>
-              <li><a routerLink="#" routerLinkActive="actived">Fabrications</a></li>
-              <li><a routerLink="#" routerLinkActive="actived">Site Internet</a></li>
-              <li><a routerLink="#" routerLinkActive="actived">Services</a></li>
-            </ul>
-          </li> -->
-          <li class="dropdown" (click)="toggleDropdown()" [ngClass]="{ 'open': isDropdownOpen }">
-            <a routerLink="/serviceOdoo" routerLinkActive="actived">
+          <li><a routerLink="/accueil" routerLinkActive="actived">Accueil</a></li>
+          
+          <!-- Dropdown Menu -->
+          <li class="dropdown" (click)="toggleDropdown()" [ngClass]="{'open': isDropdownOpen}" style="cursor: pointer;">
+            <a aria-haspopup="true" [attr.aria-expanded]="isDropdownOpen">
               Vos besoins <i class="fas fa-chevron-down"></i>
             </a>
             <ul class="dropdown-menu" *ngIf="isDropdownOpen">
@@ -54,15 +47,16 @@
               <li><a routerLink="#" routerLinkActive="actived">Site Internet</a></li>
               <li><a routerLink="#" routerLinkActive="actived">Services</a></li>
             </ul>
-          </li>          
+          </li>
+          
           <li><a routerLink="/package-metier" routerLinkActive="actived">Package Métier</a></li>
           <li><a routerLink="/about" routerLinkActive="actived">À propos</a></li>
         </ul>
 
-        <!-- Actions de Connexion et Contact -->
+        <!-- Actions -->
         <div class="actions">
-          <a routerLink="/login" routerLinkActive="actived" class="connexion">Connexion</a>
-          <a routerLink="/contact" class="btn">Contactez-nous</a>
+          <a routerLink="/besoin" class="btn">Soumettre un besoin</a>
+          <a routerLink="/contact" class="btn2">Contactez-nous</a>
         </div>
       </div>
     </div>

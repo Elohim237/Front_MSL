@@ -1,38 +1,73 @@
-/* Container du slider */
-.slider-container {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Prend toute la hauteur de l'écran */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Slide */
+body {
+  overflow-x: hidden; /* Supprime tout scroll horizontal */
+}
+
+/* Slider Styles */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 95vh; /* Hauteur du slider */
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animation fluide */
+}
+
 .slide {
-  min-width: 100%;
-  transition: opacity 1s ease-in-out;
-  opacity: 0;
+  flex: 0 0 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Centre horizontalement le contenu */
+  align-items: center; /* Centre verticalement le contenu */
+  text-align: center;
+  overflow: hidden;
+  opacity: 0; /* Par défaut, invisible */
+  transform: scale(0.95); /* Légèrement réduit */
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1; /* Slide actif visible */
+  transform: scale(1); /* Taille normale */
+  z-index: 2; /* Priorité au slide actif */
+}
+
+.slide.inactive {
+  opacity: 0; /* Slide inactif invisible */
+  transform: scale(0.95); /* Légèrement réduit pour un effet de sortie */
+  z-index: 1;
+}
+
+.slider-content {
+  position: relative;
+  z-index: 3; /* Le texte est au-dessus des autres éléments */
+  color: #fff;
+  max-width: 80%; /* Limite la largeur du contenu */
+  margin: auto;
+}
+
+/* Images */
+img {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-/* Slide actif */
-.slide.active {
-  opacity: 1;
-  position: relative;
-}
-
-/* Contenu du slider */
-.slider-content {
-  position: relative;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  object-fit: cover; /* Adapte l'image sans déformation */
+  z-index: 1;
 }
 
 /* Overlay */
@@ -42,143 +77,124 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Texte de l'overlay */
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center; /* Centré pour tablette et mobile */
-  max-width: 80%; /* Limiter la largeur du texte */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Sombre le fond */
   z-index: 2;
 }
 
-.text-overlay h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
+/* Text Overlay */
+.text-overlay {
+  opacity: 0;
+  transform: translateY(20px); /* Glisse légèrement vers le haut */
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
-.text-overlay h2 span {
-  color: #ffcc00;
+.slide.active .text-overlay {
+  opacity: 1; /* Texte visible */
+  transform: translateY(0); /* Position normale */
+}
+
+.text-overlay h2 {
+  font-size: clamp(1.5rem, 2.5vw, 3rem); /* Texte responsive */
+  margin-bottom: 1rem;
 }
 
 .text-overlay p {
-  font-size: 1em;
-  margin-bottom: 20px;
-  color: #fff;
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  margin-bottom: 2rem;
 }
 
-.text-description {
-  width: 40rem;
-  max-width: 100%; /* Empêche le dépassement sur petits écrans */
-}
-
-/* Boutons */
 .buttons {
   display: flex;
+  gap: 1rem; /* Espacement entre les boutons */
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px; /* Espacement entre les boutons */
-  z-index: 10;
-  cursor: pointer;
+  justify-content: center; /* Centre les boutons */
 }
 
-.btn-yellow {
-  border: none;
+.buttons .btn-yellow {
   padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 20px;
-  font-weight: 700;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Effet hover pour les boutons */
-.btn-yellow:hover {
-  opacity: 0.8;
+.buttons .btn-yellow:hover {
+  transform: scale(1.1);
 }
 
-/* Dots de navigation */
+/* Navigation dots */
 .navigation {
   position: absolute;
-  bottom: 15px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
 }
 
 .dot {
-  height: 15px;
   width: 15px;
-  margin: 0 5px;
-  background-color: #bbb;
+  height: 15px;
   border-radius: 50%;
-  display: inline-block;
+  background: #ccc;
+  opacity: 0.6;
   cursor: pointer;
+  transition: opacity 0.3s, background-color 0.3s, transform 0.3s ease;
 }
 
 .dot.active-dot {
-  background-color: #ffcc00;
+  background: #ffcc00; /* Couleur du dot actif */
+  opacity: 1;
+  transform: scale(1.2); /* Mise en évidence */
 }
 
-/* MEDIA QUERIES POUR RESPONSIVE */
-
-/* Pour tablettes */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .text-overlay {
-    max-width: 90%; /* Limiter la largeur du texte */
+  .slider {
+    height: 80vh; /* Réduction de la hauteur */
+  }
+
+  .slider-content {
+    max-width: 90%; /* Moins large */
   }
 
   .text-overlay h2 {
-    font-size: 1.8em;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
   }
 
   .text-overlay p {
-    font-size: 0.9em;
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
   }
 
-  .btn-yellow {
-    padding: 8px 16px;
-    font-size: 0.9em;
-  }
-
-  .dot {
-    height: 12px;
-    width: 12px;
+  .buttons .btn-yellow {
+    font-size: 0.9rem;
+    padding: 8px 15px;
   }
 }
 
-/* Pour mobiles */
 @media (max-width: 480px) {
-  .text-overlay {
-    top: 60%; /* Décaler légèrement vers le bas */
-    max-width: 100%; /* Texte prend toute la largeur */
+  .slider {
+    height: 70vh; /* Réduction pour mobiles */
   }
 
   .text-overlay h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   .text-overlay p {
-    font-size: 0.8em;
+    font-size: 1rem;
   }
 
-  .btn-yellow {
-    padding: 8px 16px;
-    font-size: 0.8em;
+  .buttons {
+    flex-direction: column;
+    gap: 10px; /* Espacement vertical */
   }
 
-  .dot {
-    height: 12px;
-    width: 12px;
-  }
-
-  .text-description {
-    width: auto; /* Adapter la largeur au contenu */
+  .buttons .btn-yellow {
+    width: 100%; /* Pleine largeur pour les mobiles */
+    text-align: center;
   }
 }
