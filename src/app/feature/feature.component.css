@@ -1,16 +1,15 @@
 .trust-section {
-    padding: 60px 0;
+    padding: 0;
     background-color: #114D5A;
-    height: 55vh;
-    color: #fff;
     display: flex;
-    align-items: center;
+    align-items: stretch; /* Étire les enfants sur toute la hauteur */
     justify-content: center;
     background-image: url('../../assets/img/accueil/Section.png');
     background-size: cover;
     background-position: center;
     position: relative;
-   width: 100%;
+    width: 100%;
+    height: 80vh; /* Réduction de la hauteur */
 }
 
 .trust-section::before {
@@ -20,32 +19,46 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(2, 43, 58, 0.8); /* Overlay color */
+    background: rgba(2, 43, 58, 0.8); /* Overlay */
 }
 
 .trust-section .container {
-    position: relative; /* To position content above the overlay */
+    position: relative;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     z-index: 1;
+    gap: 20px;
 }
 
 .content-left {
-    flex: 1;
+    flex: 0 0 40%; /* L'image occupe 40% de la largeur du conteneur */
+    display: flex;
+    align-items: flex-end; /* Aligne l'image en bas */
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Empêche les débordements */
 }
 
 .content-left img {
-    width: 90%;
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    height: 900px; /* Limite la hauteur maximale */
+    object-fit: contain; /* Garde les proportions de l'image */
+    object-position: bottom; /* Aligne l'image vers le bas */
 }
 
 .content-right {
     flex: 1;
-    padding-left: 40px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-align: left;
 }
 
 .content-right h3 {
@@ -54,26 +67,22 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    position: relative;
 }
 
 .underline {
     width: 272px;
     height: 4px;
     background-color: #ffc107;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 10px 0 20px 0;
 }
 
 .content-right h1 {
     font-size: 32px;
-    color: #fff;
     margin-bottom: 20px;
 }
 
 .content-right p {
     font-size: 18px;
-    color: #fff;
     margin-bottom: 30px;
 }
 
@@ -92,33 +101,34 @@
     background-color: #e0a806;
 }
 
+/* Responsive Design */
 
-/* Responsive pour tablettes (768px - 1024px) */
+/* Tablette */
 @media (max-width: 1024px) {
+    .trust-section {
+        height: auto;
+        padding: 40px 20px;
+    }
+
     .trust-section .container {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-       
     }
-   
-    
-    .content-left, .content-right {
-        width: 100%;
-        padding: 0;
-    }
-    .underline {
-        position: relative;
-        width: 200px;
-        height: 3px;
-        transform: translate(140%,50%);
-    }
-    .content-left img {
+
+    .content-left {
         display: none;
+        order: 2; /* Place l'image après le texte */
+        flex: 0 0 60%; /* Réduction de la taille */
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .content-left img {
+        max-height: 600px; /* Réduction de la hauteur maximale */
     }
 
     .content-right {
         padding-left: 0;
+        text-align: center;
     }
 
     .content-right h1 {
@@ -129,22 +139,26 @@
         font-size: 16px;
     }
 
+    .underline {
+        width: 200px;
+        height: 3px;
+        margin: 10px auto 20px auto;
+    }
+
     .cta-button {
         font-size: 16px;
         padding: 12px 25px;
     }
 }
 
-/* Responsive pour mobiles (inférieur à 768px) */
+/* Mobile */
 @media (max-width: 768px) {
-    .trust-section {
-        height: auto;
-        padding: 40px 0;
-        width: 100%;
+    .content-left {
+        display: none; /* Masque l'image sur mobile */
     }
 
-    .content-right h3 {
-        font-size: 16px;
+    .content-right {
+        text-align: center;
     }
 
     .content-right h1 {
@@ -156,35 +170,13 @@
     }
 
     .underline {
-        position: relative;
-        width: 200px;
-        height: 3px;
-        transform: translate(70%,50%);
+        width: 150px;
+        margin: 10px auto 20px auto;
     }
 
     .cta-button {
+        width: 100%; /* Bouton pleine largeur */
         font-size: 14px;
         padding: 10px 20px;
-    }
-}
-
-/* Responsive pour petits mobiles (inférieur à 480px) */
-@media (max-width: 480px) {
-    .content-left img {
-        width: 100%;
-    }
-
-    .content-right h1 {
-        font-size: 20px;
-    }
-    .underline {
-        position: relative;
-        width: 150px;
-        transform: translate(70%,50%);
-    }
-
-    .cta-button {
-        width: 100%;
-        padding: 12px 0;
     }
 }
