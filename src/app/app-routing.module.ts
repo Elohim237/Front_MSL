@@ -11,6 +11,7 @@ import { ReserveDemoComponent } from './reserve-demo/reserve-demo.component';
 import { TextSlideComponent } from './text-slide/text-slide.component';
 import { ContactComponent } from './contact/contact.component';
 import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
+import { TarifsComponent } from './tarifs/tarifs.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -24,10 +25,15 @@ const routes: Routes = [
   { path: 'job-MSL', component: JobComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'besoin', component: SoumettreBesoinComponent },
+  { path: 'tarif', component: TarifsComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' }
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { 

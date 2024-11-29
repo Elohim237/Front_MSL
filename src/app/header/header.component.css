@@ -1,13 +1,3 @@
-/* Style Global */
-body {
-  font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  color: #333333;
-}
-
-/* Header Fixe */
 header {
   position: fixed;
   top: 0;
@@ -55,59 +45,35 @@ nav {
 
 /* Logo */
 .logo {
-  width: 90px;
-  height: 30px;
+  width: 100px;
 }
 
 .logo img {
-  height: 100%;
+  height: auto;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
-/* Burger Menu */
+/* Menu Burger */
 .burger {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 18px;
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 1.5em;
+  color: #333;
 }
 
-/* .burger span {
-  display: block;
-  height: 3px;
-  background-color: #333;
-  border-radius: 2px;
-} */
-.burger span {
-  display: block;
-  height: 3px;
-  background-color: #333;
-  border-radius: 2px;
-  transition: background-color 0.3s ease;
+.burger.active {
+  color: #FAC83B; /* Couleur jaune lorsqu'actif */
 }
 
-/* Changer la couleur lorsque le burger est actif */
-.burger.active span {
-  background-color: #FAC83B; /* Couleur jaune */
-}
-
-/* Navigation Wrapper */
-.nav-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  transition: transform 0.3s ease-in-out;
-}
-
+/* Navigation Links */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .nav-links li {
@@ -175,7 +141,7 @@ nav {
 }
 
 .btn:hover {
-  background: #0f3b46; /* Slightly darker shade */
+  background: #0f3b46; /* Teinte légèrement plus foncée */
 }
 
 .btn2 {
@@ -189,216 +155,142 @@ nav {
 }
 
 .btn2:hover {
-  background: #e6b800; /* Slightly darker shade */
+  background: #e6b800; /* Teinte légèrement plus foncée */
 }
 
-/* Close Button (Mobile) */
+/* Mobile Actions */
+.mobile-actions {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+/* Styles pour le bouton de fermeture */
 .close-btn {
   display: none;
+  justify-content: flex-end; /* Aligne le bouton à droite */
+  padding: 0 20px;
+  margin-bottom: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.mobile-logo a {
-  font-size: 20px;
-  font-weight: 700;
-  color: #000;
-  text-decoration: none;
-}
-
-.mobile-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 17px 0;
-  z-index: 9;
-  background: #fff;
-}
-
-.mobile-header-elements {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.mobile-nav-icon {
-  font-size: 23px;
-  border: 1px solid;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  color: #000;
-}
-
-.mobile-sidebar {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background: #000;
-  z-index: 99;
-  padding: 40px 30px;
-  left: -100%;
-  top: 0;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s;
-}
-
-.mobile-sidebar.mobile-menu-active {
-  left: 0;
-  visibility: visible;
-  opacity: 1;
-  transition: all 0.3s;
-}
-
-.menu-close {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  font-size: 25px;
-  color: #fff;
+.close-btn button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
   cursor: pointer;
-}
-
-.mobile-nav li a {
-  font-size: 18px;
-  line-height: 24px;
-  color: #fff;
-  padding: 10px 0;
-  display: block;
-}
-
-ul.mobile-nav-list {
-  margin-bottom: 40px;
-  margin-top: 30px;
-}
-
-li.has-children {
-  position: relative;
-  z-index: 2;
-}
-
-span.mobile-nav-menu-icon {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  line-height: 50px;
-  color: #fff;
-}
-
-ul.mobile-menu-sub {
-  display: none;
-  position: relative;
-  left: 0;
-  padding-left: 10px;
-  transition: all 0.3s;
-}
-
-ul.mobile-menu-sub.sub-menu-active {
-  display: block;
-  position: relative;
-  transition: all 0.3s;
-}
-
-.mobile-nav li {
-  position: relative;
-  z-index: 2;
-}
-
-span.submenu-button {
-  position: absolute;
-  width: 100%;
-  height: 44px;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  transition: all 0.3s;
-}
-
-span.submenu-button:after, span.submenu-button:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 2px;
-  background: #fff;
-  top: 12px;
-  right: 9px;
-  transition: all 0.3s;
-}
-
-span.submenu-button:before {
-  height: 2px;
-  width: 20px;
-  right: 0px;
-  top: 22px;
-}
-
-span.submenu-button.submenu-opened:after {
-  visibility: hidden;
-  opacity: 0;
-}
-
-/* Styles des sous-menus */
-.sub-menu {
-  display: none;
-  padding-left: 15px;
-  transition: all 0.3s;
-}
-
-/* Afficher le sous-menu lorsqu'il a la classe 'open' */
-.sub-menu.open {
-  display: block;
-}
-
-span.multi-drop-icon {
-  position: absolute;
-  right: 10px;
-  width: 20px;
-  height: 100%;
-  top: 0;
-  text-align: center;
+  color: #000000; /* Couleur du texte en noir par défaut */
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center;     /* Centre le contenu verticalement */
 }
 
-ul.mobile-nav-list {
-  max-height: 500px;
-  overflow-y: scroll;
+.close-btn button:hover {
+  color: #FAC83B; /* Change la couleur au survol */
 }
 
-/* Styles pour l'overlay */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s;
-  z-index: 98;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Afficher le menu burger */
+  .burger {
+    display: block;
+  }
+
+  /* Cacher les actions du desktop */
+  .actions {
+    display: none;
+  }
+  .close-btn {
+    display: flex; /* Afficher uniquement en mode mobile */
+  }
+  /* Cacher la navigation par défaut */
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    flex-direction: column;
+    background-color: #fff;
+    width: 80%;
+    height: 100%;
+    padding-top: 20px;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+
+  /* Afficher le menu lorsqu'il est actif */
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 1em;
+  }
+
+  /* Styles pour le dropdown sur mobile */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    display: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu li a {
+    padding: 10px 20px;
+  }
+
+  /* Afficher les actions sur mobile */
+  .mobile-actions {
+    display: flex;
+  }
+
+  /* Styles pour le bouton de fermeture en mode mobile */
+  .close-btn {
+    display: flex;
+    justify-content: flex-end; /* Assure l'alignement à droite */
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .close-btn button {
+    color: #000000; /* Couleur du texte en noir par défaut */
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center;     /* Centre le contenu verticalement */
+  }
+
+  .close-btn button:hover {
+    color: #FAC83B; /* Couleur au survol */
+  }
 }
 
-.overlay.active {
-  visibility: visible;
-  opacity: 1;
+/* Styles pour les très petits écrans */
+@media (max-width: 480px) {
+  .logo {
+    width: 80px;
+  }
+
+  .nav-links li a {
+    font-size: 0.9em;
+  }
+
+  .btn,
+  .btn2 {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
 }

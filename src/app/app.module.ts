@@ -26,7 +26,8 @@ import { faCertificate, faCogs, faGlobe, faHeadset, faMoneyBillWave } from '@for
 import { AvantagesComponent } from './avantages/avantages.component';
 import { ContactComponent } from './contact/contact.component';
 import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { TarifsComponent } from './tarifs/tarifs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,12 +51,14 @@ import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.co
     TextSlideComponent,
     AvantagesComponent,
     ContactComponent,
-    SoumettreBesoinComponent
+    SoumettreBesoinComponent,
+    TarifsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

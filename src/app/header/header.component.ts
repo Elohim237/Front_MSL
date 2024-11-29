@@ -42,4 +42,19 @@ export class HeaderComponent {
     }
     this.activeSubmenus[menu] = !this.activeSubmenus[menu];
   }
+
+  isMobile: boolean = false;
+
+ngOnInit() {
+  this.checkScreenSize();
+  window.addEventListener('resize', () => this.checkScreenSize());
+}
+
+checkScreenSize() {
+  this.isMobile = window.innerWidth < 768; // Ajustez la valeur selon vos besoins
+}
+
+ngOnDestroy() {
+  window.removeEventListener('resize', () => this.checkScreenSize());
+}
 }

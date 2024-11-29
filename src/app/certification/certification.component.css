@@ -1,4 +1,4 @@
-
+/* Certification Section */
 .certification-section {
     background-color: #114D5A;
     color: white;
@@ -17,6 +17,7 @@
 .certification-content {
     flex: 1;
     max-width: 600px;
+    position: relative; /* Pour l'underline */
 }
 
 .certification-content h3 {
@@ -27,16 +28,10 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
+    position: relative;
 }
 
-.certification-content .underline {
-    width: 80px; /* Ajustez la largeur selon la longueur du mot "Certification" */
-    height: 4px;
-    background-color: #ffc107;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-}
+
 
 .certification-content h2 {
     font-size: 2.5em;
@@ -65,4 +60,79 @@
 .certification-badge img {
     max-width: 300px;
     height: auto;
+}
+
+/* Media Queries */
+
+/* Tablettes */
+@media (max-width: 992px) {
+    .certification-content h2 {
+        font-size: 2em;
+    }
+
+    .certification-content p {
+        font-size: 1em;
+    }
+
+    .certification-badge img {
+        max-width: 250px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .certification-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .certification-content h3 {
+        width: auto;
+        margin: 0 auto 10px auto;
+    }
+
+    .certification-content .underline {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .certification-content h2 {
+        font-size: 2em;
+    }
+
+    .certification-content p {
+        font-size: 1em;
+    }
+
+    .certification-badge {
+        justify-content: center;
+    }
+
+    .certification-badge img {
+        max-width: 200px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .certification-section {
+        padding: 40px 0;
+    }
+
+    .certification-content h2 {
+        font-size: 1.8em;
+    }
+
+    .certification-content p {
+        font-size: 0.9em;
+    }
+
+    .certification-badge img {
+        max-width: 150px;
+    }
 }
